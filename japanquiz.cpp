@@ -51,7 +51,6 @@ void JapanQuiz::update_questions_from_selection() {
 }
 
 void JapanQuiz::update_score() {
-    qDebug() << correctQuestions << " / " << totalQuestions;
     ui->lcdScore->display(correctQuestions);
     ui->lcdTotal->display(totalQuestions);
 }
