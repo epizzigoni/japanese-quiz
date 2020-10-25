@@ -4,3 +4,5 @@
 
 *.pro.user
 *.pro.user.*
+*.autosave
+
