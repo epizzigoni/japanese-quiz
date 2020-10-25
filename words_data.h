@@ -8,15 +8,15 @@ QMap<QString, QStringList> groupMap {
 };
 
 QMap<QString, QStringList> ansMap {
-    {"mouth", {"kuchi", "くち", "口"}},
-    {"eye", {"me", "め", "目"}},
-    {"ear",	{"mimi", "みみ", "耳"}},
-    {"nose", {"hana", "はな", "鼻"}},
+    {"mouth", {"mouth", "kuchi", "くち", "口"}},
+    {"eye", {"eye", "me", "め", "目"}},
+    {"ear",	{"ear", "mimi", "みみ", "耳"}},
+    {"nose", {"nose", "hana", "はな", "鼻"}},
 
-    {"pillow", {"makura", "まくら", "枕"}},
-    {"bed", {"beddo", "ベッド", "ベッド"}},
-    {"futon", {"futon", "ふとん", "布団"}},
-    {"blanket", {"moufu", "もうふ", "毛布"}}
+    {"pillow", {"pillow", "makura", "まくら", "枕"}},
+    {"bed", {"bed", "beddo", "ベッド", "ベッド"}},
+    {"futon", {"futon", "futon", "ふとん", "布団"}},
+    {"blanket", {"blanket", "moufu", "もうふ", "毛布"}}
 };
 
 
