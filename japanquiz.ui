@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>781</width>
-    <height>551</height>
+    <height>416</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,9 +18,9 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>90</y>
+      <y>130</y>
       <width>741</width>
-      <height>381</height>
+      <height>211</height>
      </rect>
     </property>
     <property name="autoFillBackground">
@@ -36,8 +36,8 @@
      <widget class="QPushButton" name="startButton">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>210</y>
+        <x>180</x>
+        <y>150</y>
         <width>112</width>
         <height>32</height>
        </rect>
@@ -46,15 +46,20 @@
        <string>Start</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="dropDownMode">
+     <widget class="QComboBox" name="dropDownAns">
       <property name="geometry">
        <rect>
         <x>90</x>
-        <y>260</y>
+        <y>100</y>
         <width>91</width>
         <height>32</height>
        </rect>
       </property>
+      <item>
+       <property name="text">
+        <string>English</string>
+       </property>
+      </item>
       <item>
        <property name="text">
         <string>Romaji</string>
@@ -74,8 +79,8 @@
      <widget class="QSpinBox" name="spinBoxLevel">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>320</y>
+        <x>190</x>
+        <y>20</y>
         <width>42</width>
         <height>22</height>
        </rect>
@@ -93,14 +98,86 @@
      <widget class="QListWidget" name="listWidget">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>90</y>
-        <width>256</width>
-        <height>192</height>
+        <x>430</x>
+        <y>30</y>
+        <width>261</width>
+        <height>151</height>
        </rect>
       </property>
       <property name="selectionMode">
        <enum>QAbstractItemView::NoSelection</enum>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="dropDownQuest">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>60</y>
+        <width>91</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="currentText">
+       <string>English</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>English</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Romaji</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Kana</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Kanji</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>70</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>From:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>110</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>To:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>20</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Level:</string>
       </property>
      </widget>
     </widget>
@@ -108,8 +185,8 @@
      <widget class="QPushButton" name="ansButton1">
       <property name="geometry">
        <rect>
-        <x>160</x>
-        <y>210</y>
+        <x>190</x>
+        <y>50</y>
         <width>112</width>
         <height>61</height>
        </rect>
@@ -121,8 +198,8 @@
      <widget class="QPushButton" name="ansButton2">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>210</y>
+        <x>300</x>
+        <y>50</y>
         <width>112</width>
         <height>61</height>
        </rect>
@@ -134,8 +211,8 @@
      <widget class="QPushButton" name="ansButton3">
       <property name="geometry">
        <rect>
-        <x>380</x>
-        <y>210</y>
+        <x>410</x>
+        <y>50</y>
         <width>112</width>
         <height>61</height>
        </rect>
@@ -150,7 +227,7 @@
       <property name="geometry">
        <rect>
         <x>260</x>
-        <y>220</y>
+        <y>50</y>
         <width>191</width>
         <height>31</height>
        </rect>
@@ -162,7 +239,7 @@
     <property name="geometry">
      <rect>
       <x>540</x>
-      <y>500</y>
+      <y>370</y>
       <width>112</width>
       <height>32</height>
      </rect>
@@ -174,24 +251,38 @@
    <widget class="QLabel" name="labelQuestion">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>40</y>
-      <width>151</width>
-      <height>16</height>
+      <x>250</x>
+      <y>60</y>
+      <width>281</width>
+      <height>61</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>30</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>xxxxxxxxxxxxxxxx</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLCDNumber" name="lcdScore">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>40</y>
-      <width>64</width>
-      <height>23</height>
+      <x>570</x>
+      <y>50</y>
+      <width>91</width>
+      <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
     <property name="smallDecimalPoint">
      <bool>false</bool>
@@ -201,17 +292,17 @@
     <property name="geometry">
      <rect>
       <x>670</x>
-      <y>40</y>
-      <width>64</width>
-      <height>23</height>
+      <y>50</y>
+      <width>91</width>
+      <height>41</height>
      </rect>
     </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>20</y>
+      <x>570</x>
+      <y>30</y>
       <width>58</width>
       <height>16</height>
      </rect>
@@ -224,13 +315,29 @@
     <property name="geometry">
      <rect>
       <x>670</x>
-      <y>20</y>
+      <y>30</y>
       <width>58</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
      <string>Total</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelCorrect">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>20</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>
