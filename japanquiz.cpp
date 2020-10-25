@@ -12,6 +12,8 @@ QString currentKey = "";
 QStringList selectedKeys = {};
 int totalQuestions = -1;
 int correctQuestions = 0;
+int questMode = 0;
+int ansMode = 0;
 
 
 JapanQuiz::JapanQuiz(QWidget *parent)
@@ -81,20 +83,37 @@ void JapanQuiz::on_startButton_clicked() {
     ui->stackedWidget->setCurrentIndex(ui->spinBoxLevel->value());
 }
 
-void JapanQuiz::on_lineEditAnswer_returnPressed() {
+void JapanQuiz::correct_answer() {
+    correctQuestions++;
+    ui->labelCorrect->setText("Correct!");
+    ui->labelCorrect->setStyleSheet("QLabel { background-color : green;}");
+}
 
+void JapanQuiz::wrong_answer() {
+    QString wrongString = "Wrong: ";
+    wrongString = wrongString + ansMap[currentKey][questMode] + " = " + ansMap[currentKey][ansMode];
+
+    ui->labelCorrect->setText(wrongString);
+    ui->labelCorrect->setStyleSheet("QLabel { background-color : red;}");
+}
+
+void JapanQuiz::on_lineEditAnswer_returnPressed() {
     QString inputText = ui->lineEditAnswer->text();
-    QString currentAnswer = currentKey;
+    QString currentAnswer = ansMap[currentKey][questMode];
 
     if (QString::compare(inputText, currentAnswer, Qt::CaseInsensitive) == 0)
-        correctQuestions++;
+        correct_answer();
+    else
+        wrong_answer();
     ui->lineEditAnswer->clear();
     update_question();
 }
 
 void JapanQuiz::after_button_clicked(int ansId) {
     if (QString::compare(selectedKeys[ansId], currentKey, Qt::CaseInsensitive) == 0)
-        correctQuestions++;
+        correct_answer();
+    else
+        wrong_answer();
     update_question();
 }
 

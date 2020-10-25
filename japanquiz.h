@@ -34,6 +34,8 @@ private:
     void update_questions_from_selection();
     void update_score();
     void update_question();
+    void correct_answer();
+    void wrong_answer();
     void after_button_clicked(int ansId);
 
 };
