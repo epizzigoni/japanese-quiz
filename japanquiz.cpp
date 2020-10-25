@@ -26,9 +26,9 @@ JapanQuiz::JapanQuiz(QWidget *parent)
 
     QStringListIterator it(groupMap.keys());
     while (it.hasNext()) {
-          QListWidgetItem *listItem = new QListWidgetItem(it.next(), ui->listWidget);
-          listItem->setCheckState(Qt::Unchecked);
-          ui->listWidget->addItem(listItem);
+        QListWidgetItem *listItem = new QListWidgetItem(it.next(), ui->listWidget);
+        listItem->setCheckState(Qt::Unchecked);
+        ui->listWidget->addItem(listItem);
     }
 }
 
@@ -66,12 +66,14 @@ void JapanQuiz::update_question() {
     selectedKeys = mykeys.mid(0, 3);
     std::random_shuffle(selectedKeys.begin(), selectedKeys.end());
 
-    int gameMode = ui->dropDownMode->currentIndex();
-    ui->labelQuestion->setText(ansMap[currentKey][gameMode]);
+    questMode = ui->dropDownQuest->currentIndex();
+    ansMode = ui->dropDownAns->currentIndex();
 
-    ui->ansButton1->setText(ansMap[selectedKeys[0]][gameMode]);
-    ui->ansButton2->setText(ansMap[selectedKeys[1]][gameMode]);
-    ui->ansButton3->setText(ansMap[selectedKeys[2]][gameMode]);
+    ui->labelQuestion->setText(ansMap[currentKey][questMode]);
+
+    ui->ansButton1->setText(ansMap[selectedKeys[0]][ansMode]);
+    ui->ansButton2->setText(ansMap[selectedKeys[1]][ansMode]);
+    ui->ansButton3->setText(ansMap[selectedKeys[2]][ansMode]);
 }
 
 void JapanQuiz::on_startButton_clicked() {
