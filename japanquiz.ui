@@ -20,7 +20,7 @@
       <x>20</x>
       <y>130</y>
       <width>741</width>
-      <height>211</height>
+      <height>231</height>
      </rect>
     </property>
     <property name="autoFillBackground">
@@ -30,7 +30,7 @@
      <enum>QFrame::Panel</enum>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="startPage">
      <widget class="QPushButton" name="startButton">
@@ -118,7 +118,7 @@
        </rect>
       </property>
       <property name="currentText">
-       <string>English</string>
+       <string>Kanji</string>
       </property>
       <item>
        <property name="text">
@@ -185,11 +185,16 @@
      <widget class="QPushButton" name="ansButton1">
       <property name="geometry">
        <rect>
-        <x>190</x>
+        <x>131</x>
         <y>50</y>
-        <width>112</width>
-        <height>61</height>
+        <width>171</width>
+        <height>101</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>PushButton</string>
@@ -200,9 +205,14 @@
        <rect>
         <x>300</x>
         <y>50</y>
-        <width>112</width>
-        <height>61</height>
+        <width>171</width>
+        <height>101</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>PushButton</string>
@@ -211,11 +221,16 @@
      <widget class="QPushButton" name="ansButton3">
       <property name="geometry">
        <rect>
-        <x>410</x>
+        <x>470</x>
         <y>50</y>
-        <width>112</width>
-        <height>61</height>
+        <width>171</width>
+        <height>101</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>PushButton</string>
