@@ -1,5 +1,21 @@
 Group,English,Romaji,Kana,Kanji
-01 - The Body,mouth,kuchi,くち,口
+01 - Kanji 1-4,one,ichi,いち,一
+,two,ni,に,二
+,three,san,さん,三
+,four,yon,よん,四
+,five,go,ご,五
+,six,roku,ろく,六
+,seven,nana,なな,七
+,eight,hachi,はち,八
+,nine,kyuu,きゅう,九
+,ten,juu,じゅう,十
+,river,kawa,かわ,川
+,mountain,yama,やま,山
+,earth,tsuchi,つち,土
+,fire,hi,ひ,火
+,tree,ki,き,木
+,water,mizu,みず,水
+98 - The Body,mouth,kuchi,くち,口
 ,eye,me,め,目
 ,ear,mimi,みみ,耳
 ,nose,hana,はな,鼻
@@ -9,7 +25,7 @@ Group,English,Romaji,Kana,Kanji
 ,finger,yubi,ゆび,指
 ,head,atama,あたま,頭
 ,tooth,ha,は,歯
-02 - Bed and Bath,pillow,makura,まくら,枕
+99 - Bed and Bath,pillow,makura,まくら,枕
 ,bed,beddo,ベッド,ベッド
 ,futon,futon,ふとん,布団
 ,blanket,moufu,もうふ,毛布

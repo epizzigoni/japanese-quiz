@@ -2,10 +2,27 @@
 #ifndef WORDS_DATA_H
 #define WORDS_DATA_H
 QMap<QString, QStringList> groupMap {
-{"01 - The Body", {"mouth", "eye", "ear", "nose", "face", "hand", "foot", "finger", "head", "tooth"}},
-{"02 - Bed and Bath", {"pillow", "bed", "futon", "blanket", "towel", "bath", "soap", "toothbrush", "mirror", "window"}}
+{"01 - Kanji 1-4", {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "river", "mountain", "earth", "fire", "tree", "water"}},
+{"98 - The Body", {"mouth", "eye", "ear", "nose", "face", "hand", "foot", "finger", "head", "tooth"}},
+{"99 - Bed and Bath", {"pillow", "bed", "futon", "blanket", "towel", "bath", "soap", "toothbrush", "mirror", "window"}}
 };
 QMap<QString, QStringList> ansMap {
+{"one", {"one", "ichi", "いち", "一"}},
+{"two", {"two", "ni", "に", "二"}},
+{"three", {"three", "san", "さん", "三"}},
+{"four", {"four", "yon", "よん", "四"}},
+{"five", {"five", "go", "ご", "五"}},
+{"six", {"six", "roku", "ろく", "六"}},
+{"seven", {"seven", "nana", "なな", "七"}},
+{"eight", {"eight", "hachi", "はち", "八"}},
+{"nine", {"nine", "kyuu", "きゅう", "九"}},
+{"ten", {"ten", "juu", "じゅう", "十"}},
+{"river", {"river", "kawa", "かわ", "川"}},
+{"mountain", {"mountain", "yama", "やま", "山"}},
+{"earth", {"earth", "tsuchi", "つち", "土"}},
+{"fire", {"fire", "hi", "ひ", "火"}},
+{"tree", {"tree", "ki", "き", "木"}},
+{"water", {"water", "mizu", "みず", "水"}},
 {"mouth", {"mouth", "kuchi", "くち", "口"}},
 {"eye", {"eye", "me", "め", "目"}},
 {"ear", {"ear", "mimi", "みみ", "耳"}},
