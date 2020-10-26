@@ -38,5 +38,8 @@ private:
     void wrong_answer();
     void after_button_clicked(int ansId);
 
+protected:
+    void keyPressEvent(QKeyEvent *e);
+
 };
 #endif // JAPANQUIZ_H

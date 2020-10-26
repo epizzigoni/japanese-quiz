@@ -4,6 +4,7 @@
 #include <QtDebug>
 #include <QRandomGenerator>
 #include <algorithm>
+#include <QKeyEvent>
 
 // Variables
 
@@ -134,3 +135,16 @@ void JapanQuiz::on_quitButton_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->startPage);
     ui->quitButton->hide();
 }
+
+void JapanQuiz::keyPressEvent(QKeyEvent *e) {
+    if (ui->stackedWidget->currentIndex() == 1)
+        switch ((char)e->key()) {
+        case '1':
+            after_button_clicked(0);
+        case '2':
+            after_button_clicked(1);
+        case '3':
+            after_button_clicked(2);
+        }
+}
+
