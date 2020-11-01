@@ -33,6 +33,7 @@ private:
 
     void update_questions_from_selection();
     void update_score();
+    void update_also_string();
     void update_question();
     void correct_answer();
     void wrong_answer();

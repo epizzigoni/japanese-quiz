@@ -56,6 +56,14 @@ void JapanQuiz::update_score() {
     ui->lcdTotal->display(totalQuestions);
 }
 
+void JapanQuiz::update_also_string() {
+    int alsoDropIdx = ui->dropDownAlso->currentIndex();
+    QString alsoString = " ";
+    if (alsoDropIdx != 0)
+        alsoString = ansMap[currentKey][alsoDropIdx-1];
+    ui->labelQuestAddition->setText(alsoString);
+}
+
 void JapanQuiz::update_question() {
     // TODO: update score inside here
     totalQuestions++;
@@ -70,6 +78,7 @@ void JapanQuiz::update_question() {
     ansMode = ui->dropDownAns->currentIndex();
 
     ui->labelQuestion->setText(ansMap[currentKey][questMode]);
+    update_also_string();
 
     ui->ansButton1->setText(ansMap[selectedKeys[0]][ansMode]);
     ui->ansButton2->setText(ansMap[selectedKeys[1]][ansMode]);
@@ -101,7 +110,7 @@ void JapanQuiz::wrong_answer() {
 
 void JapanQuiz::on_lineEditAnswer_returnPressed() {
     QString inputText = ui->lineEditAnswer->text();
-    QString currentAnswer = ansMap[currentKey][questMode];
+    QString currentAnswer = ansMap[currentKey][ansMode];
 
     if (QString::compare(inputText, currentAnswer, Qt::CaseInsensitive) == 0)
         correct_answer();
