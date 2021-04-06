@@ -30,6 +30,7 @@ private slots:
 
 private:
     Ui::JapanQuiz *ui;
+    int ansMode = 0;
 
     void update_questions_from_selection();
     void update_score();

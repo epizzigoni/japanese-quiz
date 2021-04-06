@@ -14,7 +14,6 @@ QStringList selectedKeys = {};
 int totalQuestions = -1;
 int correctQuestions = 0;
 int questMode = 0;
-int ansMode = 0;
 
 
 JapanQuiz::JapanQuiz(QWidget *parent)

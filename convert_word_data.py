@@ -38,10 +38,10 @@ lines.append('#endif // WORDS_DATA_H')
 for i in range(len(lines)):
     lines[i] = '\n' + lines[i]
 
-with open('words_data.h', 'w') as f:
+with open('cpp/words_data.h', 'w') as f:
     f.writelines(lines)
 
-with open('words_data.h', 'r') as f:
+with open('cpp/words_data.h', 'r') as f:
     print(f.read())
 
 
