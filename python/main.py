@@ -27,9 +27,10 @@ class Page1Widget(QWidget):
         self.dropdown_quest.setCurrentText("Romaji")
         self.dropdown_ans = QComboBox()
         self.dropdown_ans.addItems(MODES)
-        self.spinbox_level = QSpinBox()
-        self.spinbox_level.setMinimum(1)
-        self.spinbox_level.setMaximum(2)
+        self.dropdown_also = QComboBox()
+        self.dropdown_also.addItem("----")
+        self.dropdown_also.addItems(MODES)
+        self.spinbox_level = QSpinBox(Minimum=1, Maximum=2)
 
         self.list_groups = QListWidget(FixedWidth=W * .6)
         for group_name in GROUPS:
@@ -43,6 +44,8 @@ class Page1Widget(QWidget):
         self.sub_layout.addWidget(self.dropdown_quest)
         self.sub_layout.addWidget(QLabel('Answer:'))
         self.sub_layout.addWidget(self.dropdown_ans)
+        self.sub_layout.addWidget(QLabel('Also:'))
+        self.sub_layout.addWidget(self.dropdown_also)
         self.sub_layout.addWidget(QLabel('Level:'))
         self.sub_layout.addWidget(self.spinbox_level)
 
@@ -86,12 +89,11 @@ class MainWidget(QWidget):
         super().__init__()
 
         # Create Widgets
-        self.question = QLabel("Press Start")
-        self.question.setAlignment(QtCore.Qt.AlignCenter)
-        self.question.setFont(QtGui.QFont("", 30))
+        self.question = QLabel(Text="Press Start",
+                               Alignment=QtCore.Qt.AlignCenter,
+                               Font=QtGui.QFont("", 30))
 
-        self.label_correct = QLabel()
-        self.label_correct.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_correct = QLabel(Alignment=QtCore.Qt.AlignCenter)
 
         self.button_quit = QPushButton("Quit", Visible=False)
         self.button_start = QPushButton("Start")
@@ -157,14 +159,20 @@ class MainWidget(QWidget):
         self.lcd_total.display(self.total_questions)
         self.lcd_score.display(self.correct_questions)
 
+    def get_also_string(self):
+        also_mode = self.page1.dropdown_also.currentText()
+        if also_mode == "----":
+            return ""
+        return self.current_question[also_mode]
+
     def update_question(self):
         self.total_questions += 1
         self.update_score()
         picked_questions = self.data.sample(frac=1).iloc[:3]
         self.current_question = picked_questions.iloc[0]
         self.current_correct_answer = self.current_question[self.answer_mode]
-
-        self.question.setText(self.current_question[self.question_mode])
+        also_string = "   " + self.get_also_string()
+        self.question.setText(self.current_question[self.question_mode] + also_string)
 
         self.buttons_choices = list(picked_questions[self.answer_mode])
         random.shuffle(self.buttons_choices)
